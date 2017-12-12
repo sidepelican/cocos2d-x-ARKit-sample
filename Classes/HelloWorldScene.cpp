@@ -1,5 +1,7 @@
 #include "HelloWorldScene.h"
-#include "SimpleAudioEngine.h"
+
+#include "CameraBackgroundDepthBrushClear.h"
+#include "ARHelper.h"
 
 USING_NS_CC;
 
@@ -16,7 +18,9 @@ bool HelloWorld::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
     auto camera = Camera::createPerspective(60, visibleSize.width/visibleSize.height, .1f, 1000.f);
-    camera->setBackgroundBrush(CameraBackgroundColorBrush::create({ .176f, .522f, .937f, 1.f }, 1.f));
+    camera->setBackgroundBrush(CameraBackgroundDepthBrushClear::create(1.f));
+    camera->setDepth(0);
+    
     camera->setPosition3D({ 0.f, 150.f, 250.f });
     camera->setCameraFlag(CameraFlag::USER1);
     this->addChild(camera);
@@ -37,6 +41,9 @@ bool HelloWorld::init()
     human->addChild(floor);
     
     camera->lookAt(Vec3::UNIT_Y * 100.f);
+    
+    // set background native view
+    ARHelper::showTestTableView();
     
     return true;
 }

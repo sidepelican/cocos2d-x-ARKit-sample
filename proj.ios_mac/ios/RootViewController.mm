@@ -48,8 +48,8 @@
                                          depthFormat: cocos2d::GLViewImpl::_depthFormat
                                   preserveBackbuffer: NO
                                           sharegroup: nil
-                                       multiSampling: NO
-                                     numberOfSamples: 0 ];
+                                       multiSampling: YES
+                                     numberOfSamples: 2 ];
     _eaglView = eaglView;
     
     // Enable or disable multiple touches

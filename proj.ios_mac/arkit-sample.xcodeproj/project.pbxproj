@@ -17,6 +17,12 @@
 		372D37D41FDF80D200DF34F2 /* girl.c3b in Resources */ = {isa = PBXBuildFile; fileRef = 372D37D21FDF80CB00DF34F2 /* girl.c3b */; };
 		372D37FB1FDF868200DF34F2 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = 372D37FA1FDF868200DF34F2 /* body.png */; };
 		372D37FC1FDF868200DF34F2 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = 372D37FA1FDF868200DF34F2 /* body.png */; };
+		372D38041FDF91E300DF34F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D38031FDF91E300DF34F2 /* TableViewController.swift */; };
+		372D38051FDF91E300DF34F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D38031FDF91E300DF34F2 /* TableViewController.swift */; };
+		372D38091FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */; };
+		372D380A1FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */; };
+		377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3881FE01AB600ECCFA6 /* ARHelper.mm */; };
+		377BF38B1FE01AB600ECCFA6 /* ARHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3881FE01AB600ECCFA6 /* ARHelper.mm */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -122,6 +128,12 @@
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		372D37D21FDF80CB00DF34F2 /* girl.c3b */ = {isa = PBXFileReference; lastKnownFileType = file; path = girl.c3b; sourceTree = "<group>"; };
 		372D37FA1FDF868200DF34F2 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
+		372D38031FDF91E300DF34F2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ios/TableViewController.swift; sourceTree = SOURCE_ROOT; };
+		372D38061FDF91FB00DF34F2 /* bridge-arkit-sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "bridge-arkit-sample.h"; path = "ios/bridge-arkit-sample.h"; sourceTree = SOURCE_ROOT; };
+		372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraBackgroundDepthBrushClear.cpp; sourceTree = "<group>"; };
+		372D38081FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraBackgroundDepthBrushClear.h; sourceTree = "<group>"; };
+		377BF3881FE01AB600ECCFA6 /* ARHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ARHelper.mm; sourceTree = "<group>"; };
+		377BF3891FE01AB600ECCFA6 /* ARHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARHelper.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -228,6 +240,8 @@
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
 				503AE0FF17EB989F00D1A890 /* RootViewController.mm */,
+				372D38031FDF91E300DF34F2 /* TableViewController.swift */,
+				372D38061FDF91FB00DF34F2 /* bridge-arkit-sample.h */,
 			);
 			name = ios;
 			path = Classes;
@@ -314,6 +328,10 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */,
+				372D38081FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.h */,
+				377BF3881FE01AB600ECCFA6 /* ARHelper.mm */,
+				377BF3891FE01AB600ECCFA6 /* ARHelper.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -395,6 +413,10 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = R3M694BK62;
+						LastSwiftMigration = 0920;
+					};
+					5087E73D17EB910900C73F5D = {
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -502,7 +524,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */,
+				372D38091FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				372D38041FDF91E300DF34F2 /* TableViewController.swift in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -515,7 +540,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				372D380A1FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */,
+				372D38051FDF91E300DF34F2 /* TableViewController.swift in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				377BF38B1FE01AB600ECCFA6 /* ARHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -556,7 +585,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -564,6 +594,9 @@
 				);
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ios/bridge-arkit-sample.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
 				VALID_ARCHS = "arm64 armv7";
@@ -574,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = R3M694BK62;
@@ -589,7 +623,8 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -597,6 +632,8 @@
 				);
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "ios/bridge-arkit-sample.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
 				VALID_ARCHS = "arm64 armv7";
@@ -610,6 +647,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -625,11 +663,14 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Debug;
@@ -641,6 +682,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
@@ -655,11 +697,13 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Release;
