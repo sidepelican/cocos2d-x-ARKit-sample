@@ -43,7 +43,7 @@ bool HelloWorld::init()
     camera->lookAt(Vec3::UNIT_Y * 100.f);
     
     // set background native view
-    ARHelper::showTestTableView();
+    ARHelper::startARSession();
     
     return true;
 }

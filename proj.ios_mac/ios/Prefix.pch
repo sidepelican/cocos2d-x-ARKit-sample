@@ -5,6 +5,7 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
+    @protocol ARSCNViewDelegate;
 #endif
 
 #ifdef __cplusplus

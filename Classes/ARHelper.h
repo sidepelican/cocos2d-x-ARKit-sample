@@ -7,6 +7,7 @@ class ARHelper
 {
 public:
     static void showTestTableView();
+    static void startARSession();
     
 private:
     ARHelper() = delete;

@@ -23,6 +23,10 @@
 		372D380A1FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */; };
 		377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3881FE01AB600ECCFA6 /* ARHelper.mm */; };
 		377BF38B1FE01AB600ECCFA6 /* ARHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3881FE01AB600ECCFA6 /* ARHelper.mm */; };
+		377BF3911FE01E1500ECCFA6 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3901FE01E1500ECCFA6 /* ARViewController.swift */; };
+		377BF3921FE01E1500ECCFA6 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3901FE01E1500ECCFA6 /* ARViewController.swift */; };
+		377BF3941FE01E5E00ECCFA6 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377BF3931FE01E5E00ECCFA6 /* ARKit.framework */; };
+		377BF3961FE01E6A00ECCFA6 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377BF3951FE01E6900ECCFA6 /* SceneKit.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -134,6 +138,9 @@
 		372D38081FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraBackgroundDepthBrushClear.h; sourceTree = "<group>"; };
 		377BF3881FE01AB600ECCFA6 /* ARHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ARHelper.mm; sourceTree = "<group>"; };
 		377BF3891FE01AB600ECCFA6 /* ARHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARHelper.h; sourceTree = "<group>"; };
+		377BF3901FE01E1500ECCFA6 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ios/ARViewController.swift; sourceTree = SOURCE_ROOT; };
+		377BF3931FE01E5E00ECCFA6 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
+		377BF3951FE01E6900ECCFA6 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -191,6 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377BF3961FE01E6A00ECCFA6 /* SceneKit.framework in Frameworks */,
+				377BF3941FE01E5E00ECCFA6 /* ARKit.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
@@ -241,6 +250,7 @@
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
 				503AE0FF17EB989F00D1A890 /* RootViewController.mm */,
 				372D38031FDF91E300DF34F2 /* TableViewController.swift */,
+				377BF3901FE01E1500ECCFA6 /* ARViewController.swift */,
 				372D38061FDF91FB00DF34F2 /* bridge-arkit-sample.h */,
 			);
 			name = ios;
@@ -282,6 +292,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				377BF3951FE01E6900ECCFA6 /* SceneKit.framework */,
+				377BF3931FE01E5E00ECCFA6 /* ARKit.framework */,
 				294D0D631D0D56D500F7F5D4 /* CoreText.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
@@ -527,6 +539,7 @@
 				377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */,
 				372D38091FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				377BF3911FE01E1500ECCFA6 /* ARViewController.swift in Sources */,
 				372D38041FDF91E300DF34F2 /* TableViewController.swift in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -542,6 +555,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				372D380A1FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */,
 				372D38051FDF91E300DF34F2 /* TableViewController.swift in Sources */,
+				377BF3921FE01E1500ECCFA6 /* ARViewController.swift in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				377BF38B1FE01AB600ECCFA6 /* ARHelper.mm in Sources */,
 			);
