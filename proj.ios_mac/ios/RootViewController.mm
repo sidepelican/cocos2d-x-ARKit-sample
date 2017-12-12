@@ -50,12 +50,15 @@
                                           sharegroup: nil
                                        multiSampling: NO
                                      numberOfSamples: 0 ];
+    _eaglView = eaglView;
     
     // Enable or disable multiple touches
     [eaglView setMultipleTouchEnabled:NO];
     
-    // Set EAGLView as view of RootViewController
-    self.view = eaglView;
+    // don't treat eaglView as self.view. To insert other View with z-order later.
+    UIView* baseView = [[UIView alloc] initWithFrame: [UIScreen.mainScreen bounds]];
+    [baseView addSubview: eaglView];
+    self.view = baseView;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

@@ -29,6 +29,7 @@
 @interface RootViewController : UIViewController {
 
 }
+@property (nonatomic, readonly) UIView* eaglView;
 - (BOOL) prefersStatusBarHidden;
 
 @end
