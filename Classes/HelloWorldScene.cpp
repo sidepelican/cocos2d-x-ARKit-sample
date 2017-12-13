@@ -29,6 +29,7 @@ bool HelloWorld::init()
     auto human = Sprite3D::create("girl.c3b");
     human->setCameraMask(static_cast<int>(CameraFlag::USER1));
     this->addChild(human);
+    this->human = human;
     
     if (auto animation = Animation3D::create("girl.c3b", "Take 001"))
     {
@@ -56,15 +57,23 @@ bool HelloWorld::init()
 
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
 {
+    ARHelper::hitTest(touch->getLocation());
     
+    return true;
 }
 
 void HelloWorld::onTouchMoved(Touch* touch, Event* event)
 {
-
+    const float movedDistanceSq = touch->getLocation().distanceSquared(touch->getStartLocation());
+    constexpr float startRotationThresholdSq = 10.f * 10.f;
+    if (movedDistanceSq > startRotationThresholdSq)
+    {
+        Vec3 newRotation { this->human->getRotation3D() };
+        newRotation.y += touch->getDelta().x;
+        this->human->setRotation3D(newRotation);
+    }
 }
 
 void HelloWorld::onTouchEnded(Touch* touch, Event* event)
 {
-
 }

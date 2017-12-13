@@ -33,7 +33,7 @@ class ARViewController: UIViewController {
         arView.session.pause()
     }
     
-    func handleTap(glNormalizedPoint: CGPoint) {
+    @objc func hitTest(glNormalizedPoint: CGPoint) {
         guard let currentFrame = arView.session.currentFrame else { return }
         
         // convert GL point to UIKit point.

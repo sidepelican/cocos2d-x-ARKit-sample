@@ -2,10 +2,40 @@
 
 #include "AREvent.h"
 
+#import <ARKit/ARKit.h>
 #import "arkit_sample_mobile-Swift.h"
 #import "platform/ios/CCEAGLView-ios.h"
 
 USING_NS_CC;
+
+namespace
+{
+    UIViewController* findARViewController()
+    {
+        if (@available(iOS 11.0, *)) {
+            UIViewController* rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+            for (UIViewController* vc in rootViewController.childViewControllers)
+            {
+                if ([vc isKindOfClass: [ARViewController class]])
+                {
+                    return vc;
+                }
+            }
+        }
+        
+        return nil;
+    }
+}
+
+bool ARHelper::isAvailable()
+{
+    if (@available(iOS 11.0, *))
+    {
+        return [ARWorldTrackingConfiguration isSupported];
+    }
+    
+    return false;
+}
 
 void ARHelper::showTestTableView()
 {
@@ -49,4 +79,20 @@ void ARHelper::cameraMatrixUpdated(const Mat4& worldTransform, const Mat4& proje
     event.setCameraProjectionMatrix(projection);
     
     eventDispatcher->dispatchEvent(&event);
+}
+
+void ARHelper::hitTest(const Vec2& worldPosition)
+{
+    if (@available(iOS 11.0, *))
+    {
+        ARViewController* ar = (ARViewController*)findARViewController();
+        if (!ar) return;
+        
+        // normalize
+        CGPoint pos = CGPointMake(worldPosition.x, worldPosition.y);
+        pos.x /= Director::getInstance()->getWinSize().width;
+        pos.y /= Director::getInstance()->getWinSize().height;
+        
+        [ar hitTestWithGlNormalizedPoint: pos];
+    }
 }
