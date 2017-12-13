@@ -1,8 +1,7 @@
 #include "HelloWorldScene.h"
 
-#include "CameraBackgroundDepthBrushClear.h"
+#include "ARCamera.h"
 #include "ARHelper.h"
-
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -16,15 +15,17 @@ bool HelloWorld::init()
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    
-    auto camera = Camera::createPerspective(60, visibleSize.width/visibleSize.height, .1f, 1000.f);
-    camera->setBackgroundBrush(CameraBackgroundDepthBrushClear::create(1.f));
+
+    // setup camera
+    auto camera = ARCamera::createPerspective(60, visibleSize.width/visibleSize.height, .1f, 1000.f);
     camera->setDepth(0);
-    
     camera->setPosition3D({ 0.f, 150.f, 250.f });
     camera->setCameraFlag(CameraFlag::USER1);
     this->addChild(camera);
     
+    camera->lookAt(Vec3::UNIT_Y * 100.f);
+    
+    // setup 3D objects
     auto human = Sprite3D::create("girl.c3b");
     human->setCameraMask(static_cast<int>(CameraFlag::USER1));
     this->addChild(human);
@@ -40,10 +41,30 @@ bool HelloWorld::init()
     floor->setCameraMask(static_cast<int>(CameraFlag::USER1));
     human->addChild(floor);
     
-    camera->lookAt(Vec3::UNIT_Y * 100.f);
+    // setup touch event
+    auto t = EventListenerTouchOneByOne::create();
+    t->onTouchBegan = CC_CALLBACK_2(HelloWorld::onTouchBegan, this);
+    t->onTouchMoved = CC_CALLBACK_2(HelloWorld::onTouchMoved, this);
+    t->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
+    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(t, this);
     
     // set background native view
     ARHelper::startARSession();
     
     return true;
+}
+
+bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
+{
+    
+}
+
+void HelloWorld::onTouchMoved(Touch* touch, Event* event)
+{
+
+}
+
+void HelloWorld::onTouchEnded(Touch* touch, Event* event)
+{
+
 }

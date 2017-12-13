@@ -8,6 +8,7 @@ class ARHelper
 public:
     static void showTestTableView();
     static void startARSession();
+    static void cameraMatrixUpdated(const cocos2d::Mat4& worldTransform, const cocos2d::Mat4& projection);
     
 private:
     ARHelper() = delete;

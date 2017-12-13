@@ -5,8 +5,8 @@ import ARKit
 @available(iOS 11.0, *)
 class ARViewController: UIViewController {
 
-    var arView: ARSCNView!
-    var tapAnchor: ARAnchor?
+    private var arView: ARSCNView!
+    private var currentAnchor: ARAnchor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,33 @@ class ARViewController: UIViewController {
         
         arView.session.pause()
     }
+    
+    func handleTap(glNormalizedPoint: CGPoint) {
+        guard let currentFrame = arView.session.currentFrame else { return }
+        
+        // convert GL point to UIKit point.
+        let tapPointNormalized = CGPoint(x: glNormalizedPoint.x, y: 1.0 - glNormalizedPoint.y)
+        
+        // transform point from device orientation.
+        let videoSize = view.bounds.size
+        let tapPointTransform = currentFrame.displayTransform(for: UIApplication.shared.statusBarOrientation, viewportSize: videoSize)
+        let testPoint = tapPointNormalized.applying(tapPointTransform)
+        
+        // try hitTest
+        let results = currentFrame.hitTest(testPoint, types: .existingPlane)
+        guard let result = results.first else { return }
+        
+        // keep result transform
+        currentAnchor = ARAnchor(transform: result.worldTransform)
+    }
+    
+    private func anchorToCameraTransform(anchor: ARAnchor) -> SCNMatrix4 {
+        guard let originToCameraTransform = arView.pointOfView?.worldTransform else { return SCNMatrix4Identity }
+        let originToAnchorTransform = SCNMatrix4(anchor.transform)
+        let anchorToCameraTransform = SCNMatrix4Mult(originToCameraTransform, SCNMatrix4Invert(originToAnchorTransform))
+        
+        return anchorToCameraTransform
+    }
 }
 
 // MARK:- ARSCNViewDelegate
@@ -39,8 +66,19 @@ class ARViewController: UIViewController {
 @available(iOS 11.0, *)
 extension ARViewController: ARSCNViewDelegate {
     
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if currentAnchor == nil {
+            currentAnchor = anchor
+        }
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
+        guard let anchor = currentAnchor else { return }
+        guard let currentFrame = arView.session.currentFrame else { return }
         
+        let transform = anchorToCameraTransform(anchor: anchor)
+        let projection = SCNMatrix4(currentFrame.camera.projectionMatrix)
         
+        ARKitHelper.cameraMatrixUpdated(transform, projection: projection)
     }
 }
