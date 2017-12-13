@@ -14,7 +14,6 @@ bool HelloWorld::init()
     if (!Scene::init()) return false;
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     // setup camera
     auto camera = ARCamera::createPerspective(60, visibleSize.width/visibleSize.height, .1f, 1000.f);
@@ -49,7 +48,6 @@ bool HelloWorld::init()
     t->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(t, this);
     
-    // set background native view
     ARHelper::startARSession();
     
     return true;

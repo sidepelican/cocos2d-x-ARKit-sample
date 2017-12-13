@@ -15,7 +15,6 @@
 		3703DB9D1FE0F6E000575699 /* ARCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3703DB9B1FE0F6E000575699 /* ARCamera.cpp */; };
 		372D37D41FDF80D200DF34F2 /* girl.c3b in Resources */ = {isa = PBXBuildFile; fileRef = 372D37D21FDF80CB00DF34F2 /* girl.c3b */; };
 		372D37FB1FDF868200DF34F2 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = 372D37FA1FDF868200DF34F2 /* body.png */; };
-		372D38041FDF91E300DF34F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D38031FDF91E300DF34F2 /* TableViewController.swift */; };
 		372D38091FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */; };
 		377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3881FE01AB600ECCFA6 /* ARHelper.mm */; };
 		377BF3911FE01E1500ECCFA6 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3901FE01E1500ECCFA6 /* ARViewController.swift */; };
@@ -105,7 +104,6 @@
 		3703DB9C1FE0F6E000575699 /* ARCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCamera.h; sourceTree = "<group>"; };
 		372D37D21FDF80CB00DF34F2 /* girl.c3b */ = {isa = PBXFileReference; lastKnownFileType = file; path = girl.c3b; sourceTree = "<group>"; };
 		372D37FA1FDF868200DF34F2 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
-		372D38031FDF91E300DF34F2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ios/TableViewController.swift; sourceTree = SOURCE_ROOT; };
 		372D38061FDF91FB00DF34F2 /* bridge-arkit-sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "bridge-arkit-sample.h"; path = "ios/bridge-arkit-sample.h"; sourceTree = SOURCE_ROOT; };
 		372D38071FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraBackgroundDepthBrushClear.cpp; sourceTree = "<group>"; };
 		372D38081FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraBackgroundDepthBrushClear.h; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
 				503AE0FF17EB989F00D1A890 /* RootViewController.mm */,
-				372D38031FDF91E300DF34F2 /* TableViewController.swift */,
 				377BF3901FE01E1500ECCFA6 /* ARViewController.swift */,
 				379B61441FE0BFB900E2C82C /* ARKitHelper.h */,
 				379B61401FE0BF9400E2C82C /* ARKitHelper.mm */,
@@ -468,7 +465,6 @@
 				372D38091FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				377BF3911FE01E1500ECCFA6 /* ARViewController.swift in Sources */,
-				372D38041FDF91E300DF34F2 /* TableViewController.swift in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

@@ -7,7 +7,6 @@ class ARHelper
 {
 public:
     static bool isAvailable();
-    static void showTestTableView();
     static void startARSession();
     static void cameraMatrixUpdated(const cocos2d::Mat4& worldTransform, const cocos2d::Mat4& projection);
     static void hitTest(const cocos2d::Vec2& worldPosition);
