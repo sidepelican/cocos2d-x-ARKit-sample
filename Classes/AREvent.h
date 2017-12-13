@@ -15,6 +15,9 @@ private:
 public:
     AREvent(): cocos2d::EventCustom(EventName) {}
     
+    void dispatchOnCocosThread();
+    void scheduleHandler(float);
+    
     void setCameraWorldTransform(const cocos2d::Mat4& m) { cameraWorldTransform = m; }
     cocos2d::Mat4 getCameraWorldTransform() const { return cameraWorldTransform; }
     void setCameraProjectionMatrix(const cocos2d::Mat4& m) { cameraProjectionMatrix = m; }
