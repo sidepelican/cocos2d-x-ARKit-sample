@@ -1,5 +1,6 @@
 #include "ARHelper.h"
 
+#include "ARManager.h"
 #include "AREvent.h"
 
 #import <ARKit/ARKit.h>
@@ -47,7 +48,7 @@ void ARHelper::startARSession()
         
         UIViewController* rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
         
-        // insert tableView behind the cocos view
+        // insert ARViewController behind the cocos view
         ARViewController* arvc = [[ARViewController alloc] init];
         [rootViewController addChildViewController: arvc];
         [rootViewController.view addSubview: arvc.view];
@@ -55,13 +56,20 @@ void ARHelper::startARSession()
     }
 }
 
-void ARHelper::cameraMatrixUpdated(const Mat4& worldTransform, const Mat4& projection)
+void ARHelper::closeARSession()
 {
-    auto event = new (std::nothrow) AREvent();
-    event->setCameraWorldTransform(worldTransform);
-    event->setCameraProjectionMatrix(projection);
-    
-    event->dispatchOnCocosThread();
+    if (@available(iOS 11.0, *))
+    {
+        ARViewController* ar = (__bridge ARViewController*)findARViewController();
+        if (!ar) return;
+        
+        [ar.view removeFromSuperview];
+        [ar removeFromParentViewController];
+        
+        // disable alpha blending
+        CCEAGLView* eaglview = (__bridge CCEAGLView*)Director::getInstance()->getOpenGLView()->getEAGLView();
+        eaglview.opaque = NO;
+    }
 }
 
 void ARHelper::hitTest(const Vec2& worldPosition)
@@ -78,4 +86,12 @@ void ARHelper::hitTest(const Vec2& worldPosition)
         
         [ar hitTestWithGlNormalizedPoint: pos];
     }
+}
+
+void ARHelper::cameraMatrixUpdated(const Mat4& worldTransform, const Mat4& projection)
+{
+    // NOTICE: this function called async with cocos thread.
+    auto event = ARManager::getInstance()->getEvent();
+    event->setCameraWorldTransform(worldTransform);
+    event->setCameraProjectionMatrix(projection);
 }

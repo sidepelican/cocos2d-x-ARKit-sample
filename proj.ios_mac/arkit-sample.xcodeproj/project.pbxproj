@@ -20,6 +20,7 @@
 		377BF3911FE01E1500ECCFA6 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377BF3901FE01E1500ECCFA6 /* ARViewController.swift */; };
 		377BF3941FE01E5E00ECCFA6 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377BF3931FE01E5E00ECCFA6 /* ARKit.framework */; };
 		377BF3961FE01E6A00ECCFA6 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377BF3951FE01E6900ECCFA6 /* SceneKit.framework */; };
+		37816FF11FE371D000DC0AFA /* ARManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37816FEF1FE371D000DC0AFA /* ARManager.cpp */; };
 		379B61411FE0BF9400E2C82C /* ARKitHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 379B61401FE0BF9400E2C82C /* ARKitHelper.mm */; };
 		379B61471FE0C5CF00E2C82C /* AREvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379B61451FE0C5CF00E2C82C /* AREvent.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -112,6 +113,8 @@
 		377BF3901FE01E1500ECCFA6 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ios/ARViewController.swift; sourceTree = SOURCE_ROOT; };
 		377BF3931FE01E5E00ECCFA6 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
 		377BF3951FE01E6900ECCFA6 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SceneKit.framework; sourceTree = DEVELOPER_DIR; };
+		37816FEF1FE371D000DC0AFA /* ARManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ARManager.cpp; sourceTree = "<group>"; };
+		37816FF01FE371D000DC0AFA /* ARManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARManager.h; sourceTree = "<group>"; };
 		379B61401FE0BF9400E2C82C /* ARKitHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ARKitHelper.mm; path = ios/ARKitHelper.mm; sourceTree = SOURCE_ROOT; };
 		379B61441FE0BFB900E2C82C /* ARKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ARKitHelper.h; path = ios/ARKitHelper.h; sourceTree = SOURCE_ROOT; };
 		379B61451FE0C5CF00E2C82C /* AREvent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AREvent.cpp; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				372D38081FDF9F1600DF34F2 /* CameraBackgroundDepthBrushClear.h */,
 				377BF3881FE01AB600ECCFA6 /* ARHelper.mm */,
 				377BF3891FE01AB600ECCFA6 /* ARHelper.h */,
+				37816FEF1FE371D000DC0AFA /* ARManager.cpp */,
+				37816FF01FE371D000DC0AFA /* ARManager.h */,
 				379B61451FE0C5CF00E2C82C /* AREvent.cpp */,
 				379B61461FE0C5CF00E2C82C /* AREvent.h */,
 				3703DB9B1FE0F6E000575699 /* ARCamera.cpp */,
@@ -459,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37816FF11FE371D000DC0AFA /* ARManager.cpp in Sources */,
 				377BF38A1FE01AB600ECCFA6 /* ARHelper.mm in Sources */,
 				3703DB9D1FE0F6E000575699 /* ARCamera.cpp in Sources */,
 				379B61471FE0C5CF00E2C82C /* AREvent.cpp in Sources */,

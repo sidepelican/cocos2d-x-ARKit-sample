@@ -8,12 +8,15 @@ class AREvent: public cocos2d::EventCustom
 public:
     static std::string EventName;
     
+    CREATE_FUNC(AREvent);
+    
 private:
-    cocos2d::Mat4 cameraWorldTransform;
-    cocos2d::Mat4 cameraProjectionMatrix;
+    cocos2d::Mat4 cameraWorldTransform { cocos2d::Mat4::IDENTITY };
+    cocos2d::Mat4 cameraProjectionMatrix { cocos2d::Mat4::IDENTITY };
     
 public:
     AREvent(): cocos2d::EventCustom(EventName) {}
+    bool init() { return true; }
     
     void dispatchOnCocosThread();
     void scheduleHandler(float);

@@ -69,7 +69,8 @@ void ARCamera::updateCameraTransform(const cocos2d::Mat4& worldTransform, const 
     
     // find the best world scale ratio between native 3D scene and cocos2d-x 3D scene.
     const Size& winSize = Director::getInstance()->getWinSize();
-    const float scale = fmin(winSize.width, winSize.height) * 1.4f;
+    constexpr float theBestScaleForYourModels = 1.4f;
+    const float scale = fmin(winSize.width, winSize.height) * theBestScaleForYourModels;
     this->setPosition3D(position * scale);
     this->setRotationQuat(quat);
     

@@ -1,7 +1,8 @@
 #include "HelloWorldScene.h"
 
 #include "ARCamera.h"
-#include "ARHelper.h"
+#include "ARManager.h"
+
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -48,14 +49,14 @@ bool HelloWorld::init()
     t->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(t, this);
     
-    ARHelper::startARSession();
+    ARManager::getInstance()->startARSession();
     
     return true;
 }
 
 bool HelloWorld::onTouchBegan(Touch* touch, Event* event)
 {
-    ARHelper::hitTest(touch->getLocation());
+    ARManager::getInstance()->hitTest(touch->getLocation());
     
     return true;
 }

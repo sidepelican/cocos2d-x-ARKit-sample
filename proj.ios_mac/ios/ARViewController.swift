@@ -64,7 +64,7 @@ class ARViewController: UIViewController {
 // MARK:- ARSCNViewDelegate
 
 @available(iOS 11.0, *)
-extension ARViewController: ARSCNViewDelegate {
+@objc extension ARViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if currentAnchor == nil {
